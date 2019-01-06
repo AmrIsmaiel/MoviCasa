@@ -4,35 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp">
+    android:layout_margin="10dp"
+    app:cardCornerRadius="6dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="5dp"
-        >
+        android:paddingBottom="5dp">
 
         <ImageView
             android:id="@+id/img_moviePoster"
             android:layout_width="100dp"
-            android:layout_height="140dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_movieTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="144dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_movieRelease"
+            android:src="@color/design_default_color_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_movieTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/img_moviePoster"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="spread_inside"
-            tools:text="The Big Gang Theory" />
+            tools:text="The Big Gangsad dasdasdas ad asd ad a   ASD D ADA SDASD DASDAS DQE QEF FDA ASTheory" />
 
         <TextView
             android:id="@+id/tv_movieRelease"
@@ -40,29 +48,29 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:textColor="#D76B6969"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tv_movieTitle"
             app:layout_constraintTop_toBottomOf="@+id/tv_movieTitle"
-            tools:text="OCT 2018" />
+            tools:text="9999 - 99 - 99" />
 
         <TextView
-            android:id="@+id/tv_movieGenre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tv_OverView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="start"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_movieRelease"
-            app:layout_constraintTop_toBottomOf="@+id/tv_movieTitle"
-            tools:text="Romantic" />
+            app:layout_constraintStart_toStartOf="@+id/tv_movieTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_movieRelease"
+            tools:text="A film t asdsda ededededededdedeedsasd adsd asd asd ad ad ad asda d asd ad as a sd asd asasd asd asd addasd  asdasdasdsd asdasdadasdhat has asd asd ad asd asd asdasd ad ad asd as as ytguhjk,l.;nbgvfctdcvygbhnjmlk,kmjnhbgvfctdxdct fvgbhnj j vdct fvbhnjm mnbuv ycct fvgbhnj mhbgv fctv bn    j j  a good stuff to see and a good performance to watch and a good script to read " />
 
     </android.support.constraint.ConstraintLayout>
-
-
 
 
 </android.support.design.card.MaterialCardView>
