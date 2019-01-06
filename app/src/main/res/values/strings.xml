@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MoviCasa</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="search">Search</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="search_action">Search Action</string>
+    <string name="similar_movies">Similar Movies </string>
+    <string name="no_similar_movies_yet">There is no similar movies yet</string>
 </resources>
