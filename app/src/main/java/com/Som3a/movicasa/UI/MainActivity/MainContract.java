@@ -11,9 +11,13 @@ public interface MainContract {
 
     interface mainView {
         void showToast(String s);
+
         void showProgressBar();
+
         void hideProgressBar();
+
         void displayMovies(MovieResponse movieResponse);
+
         void displayError(String s);
     }
 

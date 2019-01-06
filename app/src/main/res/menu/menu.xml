@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/ic_bookmarkDir"
-        android:title="@string/bookmarks"
+    <item
+        android:id="@+id/ic_bookmarkDir"
         android:icon="@drawable/ic_round_bookmarks_24px"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/bookmarks"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/ic_search"
-        android:title="@string/search"
         android:icon="@drawable/ic_round_search_24px"
-        app:showAsAction="ifRoom"
-        />
+        android:title="@string/search"
+        app:showAsAction="ifRoom" />
 
 </menu>

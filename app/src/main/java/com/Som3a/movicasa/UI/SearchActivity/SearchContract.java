@@ -11,11 +11,15 @@ public interface SearchContract {
 
     }
 
-    interface searchView{
+    interface searchView {
         void showToast(String str);
+
         void displayResult(SearchResponse searchResponse);
+
         void displayError(String s);
+
         void showProgressBar();
+
         void hideProgressBar();
     }
 }

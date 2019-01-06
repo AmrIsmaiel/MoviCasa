@@ -5,14 +5,17 @@ import com.Som3a.movicasa.Data.models.SearchResponse;
 
 public interface DetailsContract {
 
-    interface detailsPresenter{
+    interface detailsPresenter {
         void getSimilar(int id);
+
         void getGenresList();
     }
 
-    interface detailsView{
+    interface detailsView {
         void saveGenresList(GenreResponse genreResponse);
+
         void displaySimilarMovies(SearchResponse searchResponse);
+
         void showToast(String str);
 
         void displayError(String s);

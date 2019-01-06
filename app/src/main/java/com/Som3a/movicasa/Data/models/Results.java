@@ -1,7 +1,6 @@
 package com.Som3a.movicasa.Data.models;
 
 
-import java.util.List;
 
 public class Results {
 

@@ -1,9 +1,8 @@
 package com.Som3a.movicasa.UI.MainActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -15,7 +14,6 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.Som3a.movicasa.Adapters.MoviesAdapter;
-import com.Som3a.movicasa.Data.DBHelper;
 import com.Som3a.movicasa.Data.models.MovieResponse;
 import com.Som3a.movicasa.Data.models.Results;
 import com.Som3a.movicasa.R;
@@ -28,13 +26,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements MainContract.mainView {
 
+    private static final String TAG = "MainActivity";
     RecyclerView rvMainList;
-
     ProgressBar progressBar;
     int[] list = new int[0];
     Toolbar toolbar;
-
-    private static final String TAG = "MainActivity";
     MoviesAdapter adapter;
     MainActivityPresenter mainActivityPresenter;
 
@@ -132,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.main
         if (id == R.id.ic_search) {
             Intent i = new Intent(MainActivity.this, SearchActivity.class);
             startActivity(i);
-        }else if(id == R.id.ic_bookmarkDir){
+        } else if (id == R.id.ic_bookmarkDir) {
             Intent intent = new Intent(MainActivity.this, BookMarks.class);
             startActivity(intent);
         }

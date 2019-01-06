@@ -17,33 +17,33 @@ public class DetailsPresenter implements DetailsContract.detailsPresenter {
     MovieDetails movieDetails;
     private String TAG = "DetailsPresenter";
 
-    DetailsPresenter(MovieDetails movieDetails ){
+    DetailsPresenter(MovieDetails movieDetails) {
         this.movieDetails = movieDetails;
     }
 
     @Override
     public void getSimilar(int id) {
         Observable<SearchResponse> call = NetworkClient.getRetrofit().create(NetworkInterface.class)
-                .getSimilarMoviesbyId(id,"f0efd7f4dc4421af2f2d21919d46db84");
+                .getSimilarMoviesbyId(id, "f0efd7f4dc4421af2f2d21919d46db84");
         call.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableObserver<SearchResponse>() {
                     @Override
                     public void onNext(SearchResponse searchResponse) {
-                        Log.d(TAG,"onNext"+searchResponse.getTotal_results());
+                        Log.d(TAG, "onNext" + searchResponse.getTotal_results());
                         movieDetails.displaySimilarMovies(searchResponse);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.d(TAG,"Error"+e);
+                        Log.d(TAG, "Error" + e);
                         e.printStackTrace();
                         movieDetails.displayError("Error Fetching Data");
                     }
 
                     @Override
                     public void onComplete() {
-                        Log.d(TAG,"Completed");
+                        Log.d(TAG, "Completed");
                     }
                 });
     }
@@ -62,7 +62,7 @@ public class DetailsPresenter implements DetailsContract.detailsPresenter {
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.d(TAG,"Error"+e);
+                        Log.d(TAG, "Error" + e);
                         e.printStackTrace();
                         movieDetails.displayError("Error fetching genres");
 
@@ -70,7 +70,7 @@ public class DetailsPresenter implements DetailsContract.detailsPresenter {
 
                     @Override
                     public void onComplete() {
-                        Log.d(TAG,"Completed");
+                        Log.d(TAG, "Completed");
                     }
                 });
     }

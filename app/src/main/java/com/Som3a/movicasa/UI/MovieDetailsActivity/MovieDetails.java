@@ -31,7 +31,7 @@ public class MovieDetails extends AppCompatActivity implements DetailsContract.d
     RecyclerView rvSimilarMovies;
     SimilarMovisAdapter adapter;
     int[] idGenres;
-    int flag=0;
+    int flag = 0;
     List<String> idGenresResponseList;
     private static final String TAG = "DetailsActivity";
     private static String id;
@@ -53,7 +53,6 @@ public class MovieDetails extends AppCompatActivity implements DetailsContract.d
         imgClose = findViewById(R.id.img_close);
         tvNoSimilar = findViewById(R.id.tv_noSimilarMovies);
         dbHelper = new DBHelper(this);
-
         idGenresResponseList = new ArrayList<>();
         rvSimilarMovies.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
         rvSimilarMovies.setHasFixedSize(true);
@@ -73,43 +72,37 @@ public class MovieDetails extends AppCompatActivity implements DetailsContract.d
         }
         id = Objects.requireNonNull(extras).getString("id");
         Log.d(TAG, "" + id);
-
         cursor = dbHelper.getBookmark(Integer.parseInt(id));
         if (cursor.getCount() > 0) {
             imgBookmark.setImageResource(R.drawable.ic_round_bookmark_orange_28px);
-            flag = 1 ;
-            Log.d(TAG,""+flag);
+            flag = 1;
+            Log.d(TAG, "" + flag);
 
 
         } else {
             imgBookmark.setImageResource(R.drawable.ic_round_bookmark_border_36px);
-            flag = 0 ;
+            flag = 0;
         }
-
         imgBookmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(flag == 1){
+                if (flag == 1) {
                     flag = 0;
                     imgBookmark.setImageResource(R.drawable.ic_round_bookmark_border_36px);
                     dbHelper.deleteBookmark(Integer.parseInt(id));
-                }
-                else if( flag == 0){
+                } else if (flag == 0) {
                     flag = 1;
                     imgBookmark.setImageResource(R.drawable.ic_round_bookmark_orange_28px);
                     dbHelper.insertBookmark(Integer.parseInt(id), String.valueOf(tvTitle.getText()));
                 }
             }
         });
-
-
         imgClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-
         setupPresenter();
         getmoviesList();
         detailsPresenter.getGenresList();
